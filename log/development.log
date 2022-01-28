@@ -1686,3 +1686,49 @@ Processing by ArticlesController#show as TURBO_STREAM
 Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 4814)
 
 
+Started GET "/" for 127.0.0.1 at 2022-01-28 18:33:31 +0530
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 26.7ms | Allocations: 7732)
+  Rendered layout layouts/application.html.erb (Duration: 66.2ms | Allocations: 41446)
+Completed 200 OK in 103ms (Views: 79.0ms | ActiveRecord: 0.7ms | Allocations: 49446)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-01-28 18:33:34 +0530
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 11.7ms | Allocations: 3756)
+  Rendered articles/new.html.erb within layouts/application (Duration: 13.3ms | Allocations: 4027)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 6071)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms | Allocations: 6503)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-01-28 18:35:55 +0530
+Processing by ArticlesController#new as HTML
+Filter chain halted as #<Proc:0x00007f15c413fae8 /home/gammastack/.rvm/gems/ruby-3.0.0/gems/actionpack-7.0.1/lib/action_controller/metal/http_authentication.rb:74> rendered or redirected
+Completed 401 Unauthorized in 0ms (Allocations: 194)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-28 18:36:00 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 11.4ms | Allocations: 3572)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 16871)
+Completed 200 OK in 38ms (Views: 26.7ms | ActiveRecord: 2.1ms | Allocations: 19406)
+
+
